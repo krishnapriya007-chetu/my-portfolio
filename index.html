@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio | Krishnapriya Matala</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic vectors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Use Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Gray-100 - Slightly warmer body background */
+            color: #1f2937; /* Dark Gray - Default Text */
+        }
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        /* Custom styling for the warm light theme (Emerald accent) */
+        .skill-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: #ecfdf5; /* Emerald-50 Light Background */
+            color: #059669; /* Emerald-600 */
+            font-weight: 500;
+            border-radius: 9999px; /* Full rounded */
+            font-size: 0.875rem;
+            border: 1px solid #a7f3d0; /* Emerald-200 Border */
+            transition: background-color 300ms;
+        }
+        .skill-tag:hover {
+             background-color: #d1fae5; /* Emerald-100 */
+        }
+        .project-card {
+            background-color: white; /* White card background */
+            border: 1px solid #e5e7eb; /* Light border */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            transition: box-shadow 300ms, transform 300ms;
+        }
+        .project-card:hover {
+            /* Shadow using Emerald for hover effect */
+            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 8px 10px -6px rgba(16, 185, 129, 0.1); 
+            transform: translateY(-2px);
+        }
+        /* Style for the Accent Button */
+        .accent-button {
+            background-color: #10b981; /* Emerald-500 */
+            color: white;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: background-color 300ms, transform 300ms;
+            /* Shadow using Emerald */
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.4), 0 2px 4px -2px rgba(16, 185, 129, 0.3);
+        }
+        .accent-button:hover {
+            background-color: #059669; /* Emerald-600 */
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-extrabold text-emerald-600 tracking-tight">
+                    Krishnapriya Matala <span class="text-gray-500 text-base font-medium hidden sm:inline">| Data Analyst</span>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-emerald-600 transition duration-300 font-medium">About</a>
+                    <a href="#achievements" class="text-gray-600 hover:text-emerald-600 transition duration-300 font-medium">Achievements</a>
+                    <a href="#skills" class="text-gray-600 hover:text-emerald-600 transition duration-300 font-medium">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-emerald-600 transition duration-300 font-medium">Projects</a>
+                    <a href="#contact" class="px-4 py-2 accent-button shadow-md hover:bg-emerald-700 font-bold">Contact</a>
+                </nav>
+                <!-- Mobile Menu Button (Placeholder for JS functionality) -->
+                <button class="md:hidden text-gray-600 hover:text-emerald-600 p-2 rounded-lg" onclick="toggleMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 space-y-2 border-t border-gray-200">
+            <a href="#about" onclick="toggleMenu()" class="block text-gray-600 hover:text-emerald-600 transition duration-300 font-medium py-1">About</a>
+            <a href="#achievements" onclick="toggleMenu()" class="block text-gray-600 hover:text-emerald-600 transition duration-300 font-medium py-1">Achievements</a>
+            <a href="#skills" onclick="toggleMenu()" class="block text-gray-600 hover:text-emerald-600 transition duration-300 font-medium py-1">Skills</a>
+            <a href="#projects" onclick="toggleMenu()" class="block text-gray-600 hover:text-emerald-600 transition duration-300 font-medium py-1">Projects</a>
+            <a href="#contact" onclick="toggleMenu()" class="block px-4 py-2 bg-emerald-600 text-white rounded-lg font-bold text-center">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section-padding bg-gray-100 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
+                <div class="md:w-3/5 text-center md:text-left">
+                    <p class="text-xl text-emerald-600 font-semibold mb-3">Hello, I'm Krishnapriya Matala!</p>
+                    <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
+                        Turning <span class="text-emerald-600">Complex Data</span> into Actionable <span class="text-emerald-600">Strategy</span>.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">
+                       Aspiring Data Analyst skilled in Python, SQL, and data visualization, focused on turning datasets into clear insights and informed decisions.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#projects" class="px-6 py-3 accent-button flex items-center shadow-emerald-500/30">
+                            Explore Work
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/krishnapriya-matala-b992a7285/" target="_blank" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg shadow-sm hover:bg-gray-100 transition duration-300 flex items-center">
+                            LinkedIn
+                            <i data-lucide="linkedin" class="w-5 h-5 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Picture Placeholder -->
+                <div class="md:w-2/5 flex justify-center p-6">
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 bg-gray-200 rounded-full flex items-center justify-center shadow-xl border-4 border-emerald-300 overflow-hidden">
+                        <!-- Replace this with an actual image URL for your profile picture -->
+                        <img src="https://placehold.co/320x320/ffffff/10b981?text=Your+Photo"
+                             onerror="this.onerror=null;this.src='https://placehold.co/320x320/ffffff/10b981?text=Your+Photo';"
+                             alt="Profile Photo Placeholder"
+                             class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+s
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">My End-to-End Analytical Approach</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Icon Card 1: Problem Framing & Data Acquisition -->
+                <div class="p-6 bg-gray-50 rounded-xl project-card transform hover:scale-[1.01] transition duration-300">
+                    <i data-lucide="target" class="w-10 h-10 text-emerald-600 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">1. Problem Framing & Acquisition</h3>
+                    <p class="text-gray-600">I start by asking the right questions, then efficiently structure, clean, and integrate complex data using advanced SQL and ETL pipelines.</p>
+                </div>
+                <!-- Icon Card 2: Insight Generation & Validation -->
+                <div class="p-6 bg-gray-50 rounded-xl project-card transform hover:scale-[1.01] transition duration-300">
+                    <i data-lucide="trending-up" class="w-10 h-10 text-emerald-600 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">2. Insight Generation & Validation</h3>
+                    <p class="text-gray-600">I use Python for rigorous statistical testing, predictive modeling, and identifying statistically significant trends, moving beyond surface-level metrics.</p>
+                </div>
+                <!-- Icon Card 3: Strategic Storytelling & Impact -->
+                <div class="p-6 bg-gray-50 rounded-xl project-card transform hover:scale-[1.01] transition duration-300">
+                    <i data-lucide="message-square" class="w-10 h-10 text-emerald-600 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">3. Strategic Storytelling & Impact</h3>
+                    <p class="text-gray-600">I translate complex results into clear, compelling narratives and dynamic visualizations (Tableau/Power BI) that drive stakeholder action and measurable results.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-4xl mx-auto">
+                <!-- UPDATED SECTION: Focusing on Academic, Competitive, and Project Experience -->
+                <p class="text-lg leading-relaxed text-gray-700 text-center">
+As a motivated undergraduate with a strong academic foundation, I bring a blend of analytical expertise, hands-on project experience, and competitive achievement, including a recent victory at the Tathya – Business Analytics Case Competition (SIBM Nagpur). I am rigorously trained in statistics and possess strong practical proficiency in Python, Advanced SQL, Excel, and Tableau. I excel at solving complex, ambiguous real-world problems and delivering impactful, data-driven solutions that generate measurable business value.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 text-center mt-4">
+My objective is to leverage my competitive problem solving ability and project based experience in predictive modeling and customer segmentation to contribute effectively in a full time analytical role and deliver immediate high impact business outcomes.
+                </p>
+
+                <!-- Key Impact Metrics (These are great for any experience level) -->
+<div class="mt-16 grid grid-cols-3 gap-4 border-y border-gray-200 py-6 text-gray-900">
+    <div class="text-center">
+        <p class="text-5xl font-extrabold text-emerald-600">10+</p>
+        <p class="text-sm text-gray-400 mt-1">ML Projects</p>
+    </div>
+    <div class="text-center">
+        <p class="text-5xl font-extrabold text-emerald-600">85%</p>
+        <p class="text-sm text-gray-400 mt-1">Model Accuracy</p>
+    </div>
+    <div class="text-center">
+        <p class="text-5xl font-extrabold text-emerald-600">5+</p>
+        <p class="text-sm text-gray-400 mt-1">Case Studies</p>
+    </div>
+</div>
+
+
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements" class="section-padding bg-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Key Achievements & Recognition</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Achievement 1: Case Competition Winner -->
+            <div class="p-6 bg-white rounded-xl project-card flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-300">
+                    <i data-lucide="trophy" class="w-8 h-8 text-emerald-600"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Winner Tathya Business Analytics Case Competition SIBM Nagpur</h3>
+                    <p class="text-gray-600 mb-2">
+                        Secured first place with my teammate in a national level case competition and won a cash prize of five thousand rupees by presenting a Delhi road accident analysis supported by a complete interactive dashboard and a detailed analytical report using real world data.
+                    </p>
+                    <span class="text-sm font-medium text-emerald-700 bg-emerald-50 py-1 px-3 rounded-full">Data Analysis and Dashboard Reporting</span>
+                </div>
+            </div>
+
+
+
+                <!-- Achievement 2: Certification/Project Award (Example) -->
+                        <div class="p-6 bg-white rounded-xl project-card flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-emerald-300">
+                    <i data-lucide="briefcase" class="w-8 h-8 text-emerald-600"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Remote AIML Intern at MyJobGrow</h3>
+                    <p class="text-gray-600 mb-2">
+                        Worked on machine learning prediction models and AI based chatbot systems using large language models with a focus on data driven automation intelligent responses and real world application development.
+                    </p>
+                    <span class="text-sm font-medium text-emerald-700 bg-emerald-50 py-1 px-3 rounded-full">Machine Learning and AI Systems</span>
+                </div>
+            </div>
+
+    </section>
+    <!-- End Achievements Section -->
+
+    <!-- Skills Section -->
+   <section id="skills" class="section-padding bg-gray-100 border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">My Toolkit</h2>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 sm:p-10 border border-gray-200">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Column 1: Core Languages & Tools -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-emerald-600 mb-4 flex items-center">
+                        <i data-lucide="code" class="w-6 h-6 mr-2"></i> Languages & Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Python (Pandas, NumPy, scikit-learn)</span>
+                        <span class="skill-tag">SQL (PostgreSQL, MySQL)</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Machine Learning</span>
+                    </div>
+                </div>
+
+                <!-- Column 2: Visualization & BI Tools -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-emerald-600 mb-4 flex items-center">
+                        <i data-lucide="layout-dashboard" class="w-6 h-6 mr-2"></i> BI & Visualization
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Google Data Studio</span>
+                        <span class="skill-tag">Advanced Excel</span>
+                    </div>
+                </div>
+
+                <!-- Column 3: Methods & Concepts -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-emerald-600 mb-4 flex items-center">
+                        <i data-lucide="brain" class="w-6 h-6 mr-2"></i> Methods & Concepts
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Predictive Modeling</span>
+                        <span class="skill-tag">ETL Processes</span>
+                        <span class="skill-tag">Data Storytelling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+
+    <!-- Projects Section -->
+   < id="projects" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Featured Projects</h2>
+    <p class="text-center text-lg text-gray-600 mb-12">
+      Showcasing my ability to define problems, clean complex data, build predictive models, and deliver visual insights
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+      <!-- Project Card 1: Delhi Road Accident Dashboard -->
+      <div class="rounded-xl overflow-hidden flex flex-col project-card">
+        <div class="p-6 flex-grow">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Delhi Road Accident Dashboard</h3>
+          <p class="text-sm text-emerald-600 font-medium mb-4 flex items-center">
+            <i data-lucide="bar-chart-2" class="w-4 h-4 mr-1"></i> Tableau & Data Analysis
+          </p>
+          <p class="text-gray-600 mb-4">
+            Built an interactive dashboard analyzing Delhi road accident data including crash hotspots causes and trends. Delivered actionable insights and visualizations as part of a national case competition win.
+          </p>
+        </div>
+        <div class="p-6 border-t border-gray-200 flex justify-between items-center space-x-3">
+          <a href="https://public.tableau.com/views/road_accident_dashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="px-4 py-2 accent-button text-sm">
+            <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Dashboard
+          </a>
+          <a href="https://1drv.ms/x/c/2890d2e611946915/EbwPkQjhzXpIgl2rXWWD1xQBgtvndATbK6Ktqh0fCzbsdg?e=8SGcUE" target="_blank" class="text-sm text-gray-500 hover:text-emerald-600 flex items-center transition duration-300">
+            Code / Data
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Card 2: HPCL Port Analysis Dashboard -->
+      <div class="rounded-xl overflow-hidden flex flex-col project-card">
+        <div class="p-6 flex-grow">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">HPCL Port Analysis Dashboard</h3>
+          <p class="text-sm text-emerald-600 font-medium mb-4 flex items-center">
+            <i data-lucide="bar-chart" class="w-4 h-4 mr-1"></i> Excel
+          </p>
+          <p class="text-gray-600 mb-4">
+            Created a dashboard analyzing port operations and performance using simulated data. Demonstrated KPI tracking, interactive visualizations, and insights extraction.
+          </p>
+        </div>
+        <div class="p-6 border-t border-gray-200 flex justify-between items-center space-x-3">
+          <a href="https://1drv.ms/x/c/2890d2e611946915/EcvN0Wp-gl5Ooxhq6_ngsU8BGKGKV6Jv43h_6h-rv2a6kA?e=5Bye38" target="_blank" class="px-4 py-2 accent-button text-sm">
+            <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Dashboard
+          
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Card 3: RAG Based Multi Search Agent -->
+      <div class="rounded-xl overflow-hidden flex flex-col project-card">
+        <div class="p-6 flex-grow">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">RAG Based Multi Search Agent</h3>
+          <p class="text-sm text-emerald-600 font-medium mb-4 flex items-center">
+            <i data-lucide="cpu" class="w-4 h-4 mr-1"></i> Python & AI / ML
+          </p>
+          <p class="text-gray-600 mb-4">
+            Built a retrieval augmented generation based agent to handle multi domain search using language models. Showcased skills in modern machine learning and NLP systems.
+          </p>
+        </div>
+        <div class="p-6 border-t border-gray-200 flex justify-between items-center space-x-3">
+          <a href="https://github.com/krishnapriya007-chetu/Multisearch-agent-RAG" target="_blank" class="px-4 py-2 accent-button text-sm">
+            <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Code
+         
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-800">
+            <h2 class="text-4xl font-bold mb-4">Ready to Transform Your Data?</h2>
+            <p class="text-xl mb-8 opacity-90 text-gray-600">
+                I'm currently seeking new opportunities and challenges. Let's connect!
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="mailto:krishnapriyamatala@gmail.com" class="px-8 py-3 accent-button flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Email Me
+                </a>
+                <a href="tel:+7682869039" class="border border-emerald-600 text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition duration-300 flex items-center justify-center">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i> Call Me
+                </a>
+            </div>
+
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/krishnapriya-matala-b992a7285/" target="_blank" class="text-gray-500 hover:text-emerald-600 transition duration-300">
+                    <i data-lucide="linkedin" class="w-8 h-8"></i>
+                </a>
+                <a href="https://github.com/krishnapriya007-chetu?tab=repositories" target="_blank" class="text-gray-500 hover:text-emerald-600 transition duration-300">
+                    <i data-lucide="github" class="w-8 h-8"></i>
+                </a>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-500 py-6 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Krishnapriya Matala. All rights reserved. | Emerald Light Theme.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Icon rendering -->
+    <script>
+        // Function to toggle mobile menu visibility
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initialize Lucide Icons
+        // This function replaces the data-lucide attributes with SVG icons
+        lucide.createIcons();
+
+        // Set the current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Optional: Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
